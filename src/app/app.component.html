@@ -1,39 +1,36 @@
-
-  <div class="main">
-    <div class="header">
-      <h1>Todo List</h1>
+<div class="main">
+  <div class="header">
+    <h1>Todo List</h1>
+  </div>
+  <div class="content">
+    <div
+      *ngFor="let todoList of TodoLists"
+      style="display: flex; flex-direction: column; gap: 10px; padding: 10px;"
+    >
+      <app-item-card [todoListData]="todoList"></app-item-card>
     </div>
-    <div class="content">
-      <div
-        style="display: flex; flex-direction: column; gap: 10px;"
-      >
-        <app-item-card>1</app-item-card>
-        <app-item-card>2</app-item-card>
-        <app-item-card>3</app-item-card>
-        <app-item-card>4</app-item-card>
-        <app-item-card>5</app-item-card>
-        <app-item-card>6</app-item-card>
-        <app-item-card>7</app-item-card>
-        <app-item-card>8</app-item-card>
-        <app-item-card>9</app-item-card>
-        <app-item-card>10</app-item-card>
-      </div>
 
-      <div>
-        <div
+    <div>
+      <div
+        style="
+          display: flex;
+          justify-content: flex-end;
+          padding-top: 15px;
+          padding-right: 20px;
+          padding-bottom: 5px;
+        "
+      >
+        <button
           style="
-            display: flex;
-            justify-content: flex-end;
-            padding-top: 15px;
-            padding-right: 20px;
-            padding-bottom: 5px;
+            cursor: pointer;
+            background-color: rgb(99, 112, 240);
+            border-color: transparent;
+            border-radius: 10px;
           "
         >
-          <button style="cursor: pointer">
-            <h2>Criar Task</h2>
-          </button>
-        </div>
+          <h2 style="color: white">Criar Task</h2>
+        </button>
       </div>
     </div>
   </div>
-
+</div>

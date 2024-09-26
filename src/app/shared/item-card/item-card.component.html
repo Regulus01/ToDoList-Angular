@@ -6,10 +6,26 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background-color: white;
+      border: solid white;
+      border-radius: 5px;
     "
   >
-    <div style="padding: 5px">
-      <h3>item name</h3>
+    <div
+      style="
+        max-height: 10%;
+        padding: 20px;
+        gap: 20px;
+        display: flex;
+        flex-direction: row;
+      "
+    >
+      <div>
+        <span style="font-size: 20px; font-weight: bold;"> {{ todoListData?.title }}</span>
+      </div>
+      <div>
+        <span type="date"> {{ todoListData?.creationDate }}</span>
+      </div>
     </div>
 
     <div
@@ -20,16 +36,27 @@
         max-height: 100%;
         display: flex;
         align-items: center;
-
       "
     >
       <button
-        class="pi pi-check"
-        style="padding: 10px; color: red; cursor: pointer; background-color: transparent; border: transparent;"
+        class="pi pi-ban"
+        style="
+          padding: 10px;
+          color: red;
+          cursor: pointer;
+          background-color: transparent;
+          border: transparent;
+        "
       ></button>
       <button
         class="pi pi-arrow-circle-right"
-        style="padding: 10px; color: green; cursor: pointer; background-color: transparent; border: transparent;"
+        style="
+          padding: 10px;
+          color: green;
+          cursor: pointer;
+          background-color: transparent;
+          border: transparent;
+        "
       ></button>
     </div>
   </div>

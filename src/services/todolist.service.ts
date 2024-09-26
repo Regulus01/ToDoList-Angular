@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { enviroment } from '../environments/environments';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { GetPaginatedTasks } from '../app/models/interfaces/GetPaginatedTasks';
+import { GetPaginatedTodoListRequest } from '../app/models/interfaces/GetPaginatedTodoListRequest';
 
 @Injectable({
   providedIn: 'root',
@@ -20,8 +20,8 @@ export class TodolistService {
     };
   }
 
-  getPaginatedTasks(skip : number, take : number) : Observable<GetPaginatedTasks> {
-    var response = this.http.get<GetPaginatedTasks>(`${this.API_URL}/TaskList/${skip}/${take}`, this.httpOptions)
+  getPaginatedTasks(skip : number, take : number) : Observable<GetPaginatedTodoListRequest> {
+    var response = this.http.get<GetPaginatedTodoListRequest>(`${this.API_URL}/TaskList/${skip}/${take}`, this.httpOptions)
 
     return response;
   }

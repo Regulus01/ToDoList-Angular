@@ -1,29 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TodolistService } from './../services/todolist.service';
-import { GetPaginatedTasks } from './models/interfaces/GetPaginatedTasks';
+import { GetPaginatedTodoListRequest, TodoListData } from './models/interfaces/GetPaginatedTodoListRequest';
 import { ItemCardComponent } from './shared/item-card/item-card.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ItemCardComponent],
+  imports: [RouterOutlet, ItemCardComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'todoList';
-  public TodoList = Array<GetPaginatedTasks>; 
+  public TodoLists : TodoListData[] = []; 
 
   constructor(private todoService : TodolistService) {
+ 
+  }
+  ngOnInit(): void {
+    this.getTodoList()
   }
 
   getTodoList(){
     this.todoService.getPaginatedTasks(1, 10)
     .subscribe({
       next: (response) => {
-        console.log(response)
+        this.TodoLists = response.data as TodoListData[];
+        console.log(this.TodoLists)
       }
     })
 

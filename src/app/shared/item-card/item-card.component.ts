@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TodoListData } from '../../models/interfaces/GetPaginatedTodoListRequest';
 
 @Component({
   selector: 'app-item-card',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-card.component.scss']
 })
 export class ItemCardComponent implements OnInit {
+
+  @Input() todoListData: TodoListData | null = null;
 
   constructor() { }
 
