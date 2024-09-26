@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 850px;
+    max-width: 70%;
+    max-height: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    border-top: solid black 1px;
+    height: 550px;
+    padding: 5px;  
+}
