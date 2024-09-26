@@ -3,11 +3,23 @@
     <h1>Todo List</h1>
   </div>
   <div class="content">
+    <!--Exibição das todoList-->
     <div
-      *ngFor="let todoList of TodoLists"
-      style="display: flex; flex-direction: column; gap: 10px; padding: 10px;"
+      *ngIf="TodoLists != undefined"
+      style="height: 700px; min-height: 700px"
     >
-      <app-item-card [todoListData]="todoList"></app-item-card>
+      <div
+        *ngFor="let todoList of TodoLists"
+        style="display: flex; flex-direction: column; gap: 10px; padding: 10px"
+      >
+        <app-item-card [todoListData]="todoList"></app-item-card>
+      </div>
+
+      <div *ngIf="TodoLists?.length == 0"
+        style="height: 700px; min-height: 700px; display: flex; align-items: center; justify-content: center;"
+      >
+        <h1>Crie sua primeira Task!</h1>
+      </div>
     </div>
 
     <div>

@@ -18,10 +18,12 @@ export class AppComponent implements OnInit{
   public TodoLists : TodoListData[] = []; 
 
   constructor(private todoService : TodolistService) {
+    this.getTodoList()
  
   }
+  
   ngOnInit(): void {
-    this.getTodoList()
+   
   }
 
   getTodoList(){
